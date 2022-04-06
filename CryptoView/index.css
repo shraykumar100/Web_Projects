@@ -63,17 +63,24 @@ h1,h2,h3,h4,h5,h6,p{
 }
 .trending_coin{
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
     align-items: center;
-    gap: 10px;
+    /* gap: 50px; */
+    /* overflow-x: scroll; */
+    flex-shrink: 0;
+}
+.trending_coin > .card{
+    animation-name: smooth_scroll;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
+    animation-timing-function: linear;
 }
 .trending_coin > .card > img{
     float: left;
 }
 .trending_coin > .card > span{
     float: right;
-    margin-left: 0.5rem;
 }
 .flex_container{
     display: flex;
@@ -123,4 +130,12 @@ body > .main_nav > hr{
 .footer > i {
     width: 2rem;
     height: 2rem;
+}
+@keyframes smooth_scroll{
+    from{
+        left: 0%;
+    }
+    to{
+        left: -100%;
+    }
 }
